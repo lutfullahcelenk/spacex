@@ -31,9 +31,17 @@ const LaunchContextProvider = (props) => {
     Rockets();
   }, []);
 
+  const getRocket = (rocketId) => {
+    return rockets.find((rocket) => rocket?.id === rocketId);
+  };
+
   return (
     <LaunchContext.Provider
-      value={{ companyInfo: companyInfo, rockets: rockets }}
+      value={{
+        companyInfo: companyInfo,
+        rockets: rockets,
+        getRocket: getRocket,
+      }}
     >
       {props.children}
     </LaunchContext.Provider>
