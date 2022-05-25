@@ -1,18 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//context
 import LaunchContextProvider from "./provider";
+//components
 import Navbar from "./components/Navbar";
+//pages
+import Home from "./pages/Home";
+import Rockets from "./pages/Rockets";
+import Launches from "./pages/Launches";
+import LaunchDetail from "./pages/LaunchDetail";
+import RocketDetail from "./pages/RocketDetail";
 
-const Home = React.lazy(() => import("./pages/Home"));
-const Launches = React.lazy(() => import("./pages/Launches"));
-const LaunchDetail = React.lazy(() => import("./pages/LaunchDetail"));
-const Rockets = React.lazy(() => import("./pages/Rockets"));
-const RocketDetail = React.lazy(() => import("./pages/RocketDetail"));
 
 const App = () => {
   return (
-    <LaunchContextProvider>
-      <Router>
+    <Router>
+      <LaunchContextProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -21,8 +24,8 @@ const App = () => {
           <Route path="/launches" element={<Launches />} />
           <Route path="/launches/:flightNumber" element={<LaunchDetail />} />
         </Routes>
-      </Router>
-    </LaunchContextProvider>
+      </LaunchContextProvider>
+    </Router>
   );
 };
 
