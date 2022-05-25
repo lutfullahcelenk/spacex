@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { LaunchContext } from "../context";
 
 const LaunchContextProvider = (props) => {
+  const [companyInfo, setCompanyInfo] = useState();
   const [rockets, setRockets] = useState();
 
   useEffect(() => {
@@ -9,7 +10,7 @@ const LaunchContextProvider = (props) => {
       try {
         const response = await fetch("https://api.spacexdata.com/v4/company");
         const data = await response.json();
-        setRockets(data);
+        setCompanyInfo(data);
       } catch (error) {
         console.log(error);
       }
@@ -17,8 +18,23 @@ const LaunchContextProvider = (props) => {
     CompanyInfo();
   }, []);
 
+  useEffect(() => {
+    const Rockets = async () => {
+      try {
+        const response = await fetch("https://api.spacexdata.com/v4/rockets");
+        const data = await response.json();
+        setRockets(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    Rockets();
+  }, []);
+
   return (
-    <LaunchContext.Provider value={{ rockets: rockets }}>
+    <LaunchContext.Provider
+      value={{ companyInfo: companyInfo, rockets: rockets }}
+    >
       {props.children}
     </LaunchContext.Provider>
   );

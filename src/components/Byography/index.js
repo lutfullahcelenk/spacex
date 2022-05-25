@@ -9,22 +9,22 @@ import twitter from "../../assets/home/twitter.svg";
 import elon from "../../assets/home/elonmusk.webp";
 
 const Byography = () => {
-  const { rockets } = useContext(LaunchContext);
+  const { companyInfo } = useContext(LaunchContext);
 
   return (
     <div className="container mx-auto mb-20">
       <h1 className="w-full text-5xl font-bold leading-tight text-center my-14 ">
-        {rockets?.name}
+        {companyInfo?.name}
       </h1>
       <div className="flex flex-col items-center my-10 mx-20 xl:flex-row ">
         <div className="flex flex-col m-5 w-full text-center xl:w-1/2 lg:text-left">
-          <h1 className="text-4xl font-bold mb-5">{rockets?.ceo}</h1>
-          <p className="text-base mt-8">{rockets?.summary}</p>
+          <h1 className="text-4xl font-bold mb-5">{companyInfo?.ceo}</h1>
+          <p className="text-base mt-8">{companyInfo?.summary}</p>
           <p className="text-base mt-10">For detailed informations:</p>
           <div className="flex flex-col justify-left items-center mt-6 xl:flex-row">
             <a
               className="m-2 flex items-center justify-center bg-blue-500 text-white font-bold py-2 px-3 rounded-2xl"
-              href={rockets?.links?.website}
+              href={companyInfo?.links?.website}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,7 +32,7 @@ const Byography = () => {
             </a>
             <a
               className="m-2 flex items-center justify-center bg-blue-500 text-white font-bold py-2 px-3 rounded-2xl"
-              href={rockets?.links?.flickr}
+              href={companyInfo?.links?.flickr}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,7 +40,7 @@ const Byography = () => {
             </a>
             <a
               className="m-2 flex items-center justify-center bg-blue-500 text-white font-bold py-2 px-3 rounded-2xl"
-              href={rockets?.links?.twitter}
+              href={companyInfo?.links?.twitter}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -48,7 +48,7 @@ const Byography = () => {
             </a>
             <a
               className="m-2 flex items-center justify-center bg-blue-500 text-white font-bold py-2 px-3 rounded-2xl"
-              href={rockets?.links?.elon_twitter}
+              href={companyInfo?.links?.elon_twitter}
               target="_blank"
               rel="noopener noreferrer"
             >

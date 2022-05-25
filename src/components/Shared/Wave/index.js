@@ -2,7 +2,8 @@ import React from 'react'
 
 const Wave = () => {
     return (
-      <div className="relative bg-black">
+      <div className="relative bg-gray-900">
+        
         <svg viewBox="0 0 1428 174">
           <g transform="translate(-2.000000, 44.000000)" fill="white">
             <path
