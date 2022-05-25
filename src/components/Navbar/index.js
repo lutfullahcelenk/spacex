@@ -35,7 +35,7 @@ const Navbar = () => {
       </label>
 
       <ul className="flex menu border-gray-500 border-b justify-end m-0 w-full md:border-none md:w-auto">
-        <NavItem path="/" exact>
+        <NavItem path="/">
           Home
         </NavItem>
         <NavItem path="/rockets">Rockets</NavItem>
