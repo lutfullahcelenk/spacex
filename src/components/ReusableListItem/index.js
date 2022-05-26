@@ -19,9 +19,9 @@ const ReusableListItem = ({
       </h1>
       <div className="flex flex-col items-center my-14 mx-20 text-center sm:text-left xl:flex-row">
         {isWhat === "rockets" && (
-          <div className="w-full xl:ml-20 xl:w-1/2">
+          <div className="w-full xl:w-1/2">
             <Image
-              className="w-full mt-16 rounded-lg hidden sm:block xl:mx-12 xl:mt-5"
+              className="w-full mt-16 rounded-lg hidden sm:block xl:mx-4 xl:mt-5"
               src={url}
               width="30rem"
               height="30rem"
@@ -35,7 +35,7 @@ const ReusableListItem = ({
               width="100%"
               height="450"
               src={`https://www.youtube.com/embed/${url}?autoplay=1&mute=1&loop=1&playlist=${url}`}
-              className="mt-16 rounded-lg xl:mx-12 xl:mt-5"
+              className="mt-16 rounded-lg xl:mx-2 xl:mt-5"
             />
           </div>
         )}
