@@ -12,6 +12,7 @@ import { LaunchContext } from "../../context";
 const Launches = () => {
 
   const { launches } = useContext(LaunchContext);
+  console.log('launches', launches)
   
   return (
     <Container>

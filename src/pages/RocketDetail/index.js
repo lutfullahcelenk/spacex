@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 //components
 import Wave from "../../components/Shared/Wave";
 import Container from "../../components/Shared/Container";
-import RocketItem from "../../components/RocketItem";
+import ReusableListItem from "../../components/ReusableListItem";
 //providers
 import { LaunchContext } from "../../context";
 
@@ -16,14 +16,15 @@ const RocketDetail = () => {
   return (
     <Container>
       <Wave />
-      <RocketItem
+      <ReusableListItem
+        isWhat="rockets"
         name={rocket?.name}
         description={rocket?.description}
         country={rocket?.country}
         firstFlight={rocket?.first_flight}
         diameter={rocket?.diameter?.meters}
         height={rocket?.height?.meters}
-        imageUrl={rocket?.flickr_images[1]}
+        url={rocket?.flickr_images[1]}
       />
     </Container>
   );

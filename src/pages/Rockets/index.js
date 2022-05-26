@@ -10,6 +10,7 @@ import { LaunchContext } from "../../context";
 const Rockets = () => {
 
   const { rockets } = useContext(LaunchContext);
+  console.log('rockets', rockets)
 
   return (
     <Container>
