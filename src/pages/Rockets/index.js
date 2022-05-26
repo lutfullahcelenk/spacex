@@ -3,14 +3,13 @@ import { useContext } from "react";
 import Hero from "../../components/Shared/Hero";
 import Wave from "../../components/Shared/Wave";
 import Title from "../../components/Shared/Title";
-import RocketList from "../../components/RocketList";
+import ReusableList from "../../components/ReusableList";
 import Container from "../../components/Shared/Container";
 import { LaunchContext } from "../../context";
 
 const Rockets = () => {
 
   const { rockets } = useContext(LaunchContext);
-  console.log('rockets', rockets)
 
   return (
     <Container>
@@ -21,7 +20,7 @@ const Rockets = () => {
       />
       <Wave />
       <Title message="ROCKETS" />
-      <RocketList rockets={rockets} />
+      <ReusableList datas={rockets} isWhat={"rockets"} />
     </Container>
   );
 };
