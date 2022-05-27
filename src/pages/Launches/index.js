@@ -11,9 +11,7 @@ import { LaunchContext } from "../../context";
 
 const Launches = () => {
   const { launches } = useContext(LaunchContext);
-  console.log("launches", launches);
   const [rocketName, setRocketName] = useState("");
-  console.log("rocketName", rocketName);
   const [launchYear, setLaunchYear] = useState("");
   const [launchSuccess, setLaunchSuccess] = useState("");
 
@@ -29,10 +27,11 @@ const Launches = () => {
 
   const filteredLaunches = launches.filter(
     (launch) =>
-      launch?.rocket === rocketName ||
-      launch?.date_local?.slice(0, 4) === launchYear ||
-      launch?.success === launchSuccess
+      (launch?.date_local?.slice(0, 4) === launchYear || launchYear === "") &&
+      (launch?.rocket === rocketName || rocketName === "") &&
+      (launch?.success === launchSuccess || launchSuccess === "")
   );
+  console.log("filteredLaunches", filteredLaunches);
 
   return (
     <Container>
@@ -49,10 +48,7 @@ const Launches = () => {
         launchYear={launchYear}
         launchSuccess={launchSuccess}
       />
-      <ReusableList
-        datas={filteredLaunches.length > 0 ? filteredLaunches : launches}
-        isWhat={"launches"}
-      />
+      <ReusableList datas={filteredLaunches} isWhat={"launches"} />
     </Container>
   );
 };

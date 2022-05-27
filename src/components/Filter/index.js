@@ -8,7 +8,6 @@ const Filter = ({
   launchSuccess,
 }) => {
   const { rockets } = useContext(LaunchContext);
-  console.log('rockets', rockets)
   const currentYear = new Date().getFullYear();
 
   return (
