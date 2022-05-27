@@ -10,6 +10,7 @@ import Rockets from "./pages/Rockets";
 import Launches from "./pages/Launches";
 import LaunchDetail from "./pages/LaunchDetail";
 import RocketDetail from "./pages/RocketDetail";
+import Crews from "./pages/Crews";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/rockets/:rocketId" element={<RocketDetail />} />
           <Route path="/launches" element={<Launches />} />
           <Route path="/launches/:flightNumber" element={<LaunchDetail />} />
+          <Route path="/crews" element={<Crews />} />
         </Routes>
       </LaunchContextProvider>
     </Router>

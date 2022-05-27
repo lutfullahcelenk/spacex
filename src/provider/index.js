@@ -5,6 +5,7 @@ const LaunchContextProvider = (props) => {
   const [companyInfo, setCompanyInfo] = useState();
   const [rockets, setRockets] = useState();
   const [launches, setLaunches] = useState();
+  const [crews, setCrews] = useState();
 
   useEffect(() => {
     const CompanyInfo = async () => {
@@ -45,12 +46,29 @@ const LaunchContextProvider = (props) => {
     Launches();
   }, []);
 
+  useEffect(() => {
+    const Crews = async () => {
+      try {
+        const response = await fetch("https://api.spacexdata.com/v4/crew");
+        const data = await response.json();
+        setCrews(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    Crews();
+  }, []);
+
   const getRocket = (rocketId) => {
     return rockets.find((rocket) => rocket?.id === rocketId);
   };
 
   const getLaunch = (launchId) => {
     return launches.find((launch) => launch?.id === launchId);
+  };
+
+  const getCrews = (crewId) => {
+    return crews.find((crew) => crew?.id === crewId);
   };
 
   return (
@@ -61,6 +79,8 @@ const LaunchContextProvider = (props) => {
         getRocket: getRocket,
         launches: launches,
         getLaunch: getLaunch,
+        crews: crews,
+        getCrews: getCrews,
       }}
     >
       {props.children}

@@ -30,6 +30,19 @@ const ReusableList = ({ datas, isWhat }) => {
             details={rocket?.description}
           />
         ))}
+
+      {/* crews */}
+      {isWhat === "crews" &&
+        datas.map((crew, index) => (
+          <Card
+            key={index}
+            title={crew?.name}
+            imageUrl={crew?.image}
+            details={
+              "The SpaceX Crew Dragon spacecraft carrying NASA astronauts and ESA (European Space Agency) astronauts on their way to the International Space Station has safely reached orbit, and the nosecone has opened."
+            }
+          />
+        ))}
     </div>
   );
 };

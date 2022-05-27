@@ -40,6 +40,7 @@ const Navbar = () => {
         </NavItem>
         <NavItem path="/rockets">Rockets</NavItem>
         <NavItem path="/launches">Launches</NavItem>
+        <NavItem path="/crews">Crews</NavItem>
       </ul>
     </nav>
   );

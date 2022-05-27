@@ -16,7 +16,7 @@ const Launches = () => {
   const [launchName, setLaunchName] = useState("");
   const [launchSuccess, setLaunchSuccess] = useState("");
 
-  const filterChangeHandler = (type, event) => {
+  const handleFilter = (type, event) => {
     if (type === "rocketName") {
       setRocketName(event.target.value);
     } else if (type === "launchYear") {
@@ -46,7 +46,8 @@ const Launches = () => {
       <Wave />
       <Title message="LAUNCHES" />
       <Filter
-        filterChangeHandler={filterChangeHandler}
+        handleFilter={handleFilter}
+        isFilter ="launches"
         rocketName={rocketName}
         launchYear={launchYear}
         launchSuccess={launchSuccess}
