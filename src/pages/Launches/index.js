@@ -13,6 +13,7 @@ const Launches = () => {
   const { launches } = useContext(LaunchContext);
   const [rocketName, setRocketName] = useState("");
   const [launchYear, setLaunchYear] = useState("");
+  const [launchName, setLaunchName] = useState("");
   const [launchSuccess, setLaunchSuccess] = useState("");
 
   const filterChangeHandler = (type, event) => {
@@ -20,6 +21,8 @@ const Launches = () => {
       setRocketName(event.target.value);
     } else if (type === "launchYear") {
       setLaunchYear(event.target.value);
+    } else if (type === "launchName") {
+      setLaunchName(event.target.value);
     } else if (type === "launchSuccess") {
       setLaunchSuccess(event.target.value);
     }
@@ -29,9 +32,9 @@ const Launches = () => {
     (launch) =>
       (launch?.date_local?.slice(0, 4) === launchYear || launchYear === "") &&
       (launch?.rocket === rocketName || rocketName === "") &&
+      (launch?.name === launchName || launchName === "") &&
       (launch?.success === launchSuccess || launchSuccess === "")
   );
-  console.log("filteredLaunches", filteredLaunches);
 
   return (
     <Container>
