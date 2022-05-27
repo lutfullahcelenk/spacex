@@ -10,7 +10,6 @@ import Container from "../../components/Shared/Container";
 const Rockets = () => {
 
   const { rockets } = useContext(LaunchContext);
-  console.log('rockets', rockets)
 
   return (
     <Container>

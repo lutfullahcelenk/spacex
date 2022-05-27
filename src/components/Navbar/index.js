@@ -9,7 +9,7 @@ import logo from "../../assets/spacex-logo.webp"
 
 const Navbar = () => {
   return (
-    <nav className="nav flex flex-wrap items-center justify-between px-4 bg-black text-white">
+    <nav className="nav flex flex-wrap items-center justify-between px-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
       <Link
         className="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest"
         to="/"
@@ -22,7 +22,7 @@ const Navbar = () => {
         />
 
         <span className="font-semibold text-xl tracking-tight">
-          SpaceX Explorer
+          Lutfullah SpaceX
         </span>
       </Link>
 
@@ -36,11 +36,11 @@ const Navbar = () => {
 
       <ul className="flex menu border-gray-500 border-b justify-end m-0 w-full md:border-none md:w-auto">
         <NavItem path="/">
-          Home
+        🚀 Home
         </NavItem>
-        <NavItem path="/rockets">Rockets</NavItem>
-        <NavItem path="/launches">Launches</NavItem>
-        <NavItem path="/crews">Crews</NavItem>
+        <NavItem path="/rockets">🚀 Rockets</NavItem>
+        <NavItem path="/launches">🚀 Launches</NavItem>
+        <NavItem path="/crews">🚀 Crews</NavItem>
       </ul>
     </nav>
   );
